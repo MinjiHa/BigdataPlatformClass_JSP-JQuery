@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>TestWeb_Server_Practice_02</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>MyServlet2</servlet-name>
+  	<servlet-class>com.test.MyServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MyServlet2</servlet-name>
+  	<url-pattern>/MyServlet2</url-pattern>
+  </servlet-mapping>
+    <servlet>
+  	<servlet-name>LoginProcess2</servlet-name>
+  	<servlet-class>com.test.LoginProcess2</servlet-class>
+  	<init-param>
+  	<param-name>userId</param-name>
+  	<param-value>KKK</param-value>
+  	</init-param>
+  	<init-param>
+  	  	<param-name>userPwd</param-name>
+  	<param-value>1234</param-value>
+  	</init-param>
+  </servlet>
+    <servlet-mapping>
+  	<servlet-name>LoginProcess2</servlet-name>
+  	<url-pattern>/LoginProcess2</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <cookie-config>
+        <http-only>true</http-only>
+        <secure>true</secure>
+    </cookie-config>
+</session-config>
+</web-app>
+
+

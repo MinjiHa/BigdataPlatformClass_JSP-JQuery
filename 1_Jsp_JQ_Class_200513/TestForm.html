@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+	function CheckForm() {
+		//window.alert("Hello");
+		var userId = document.getElementById("userId").value;
+		//alert(userId);
+		if(userId == "") {
+			alert("Required userId");
+			return false;
+		}
+		var userPwd = document.getElementById("userPwd").value;
+		var userPwdConfirm = document.getElementById("userPwdConfirm").value;
+		//alert(userPwd + "," + userPwdConfirm);
+		if(userPwd == "") {}
+		if(userPwdConfirm == "") {}
+		if(userPwd != userPwdConfirm) {}
+		if(userId == "test" && userPwd =="1234" ) {
+			alert("Login Successful");
+		} else {
+
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="testFormProcess.jsp" method="get">
+	<input type="text" name="userId" id="userId">
+	<br>
+	<input type="password" name="userPwd" id="userPwd">
+	<br>
+	<input type="password" name="userPwdConfirm" id="userPwdConfirm">
+	<br>
+	<input type="button" value="Login" onclick="CheckForm();">
+	</form>
+</body>
+</html>
