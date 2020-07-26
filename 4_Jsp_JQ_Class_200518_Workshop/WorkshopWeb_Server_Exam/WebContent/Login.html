@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+<script type="text/javascript">
+	function checkLogin(){
+    var checkFlag = false;
+	var userId = document.getElementById('userId').value;
+	var userPwd = document.getElementById('userPwd').value;
+	var userPwdCheck = document.getElementById('userPwdCheck').value;
+    var userGender;
+
+    if (document.getElementById('men').checked) {
+      userGender = document.getElementById('men').value;
+    }
+    if (document.getElementById('woman').checked) {
+      userGender = document.getElementById('woman').value;
+    }
+
+    if(userId == "") {
+			document.getElementById("msg").innerText ="아이디를 입력해주세요.";
+			document.getElementById("msg").style.color ="red";
+      document.frm.userId.focus();
+			return false;
+		}
+		if(userPwd =="") {
+			document.getElementById("msg").innerText ="비밀번호를 입력해주세요.";
+			document.getElementById("msg").style.color ="red";
+      document.frm.userPwd.focus();
+			return false;
+		}
+    if(userPwdCheck == userPwd) {
+      checkFlag = true;
+			return false;
+		}
+		if(userPwdCheck != userPwd) {
+			document.getElementById("msg").innerText ="비밀번호가 일치하지 않습니다.";
+			document.getElementById("msg").style.color ="red";
+			return false;
+		}
+		if(typeof userGender == "undefined") {
+			document.getElementById("msg").innerText = "성별을 선택하세요";
+			document.getElementById("msg").style.color ="red";
+			return false;
+		}
+
+		if(userId == "test" &&  userPwd =="1234" && checkFlag == true){
+		      document.getElementById("Login_Form").submit();
+		    }
+	}
+</script>
+</head>
+<body>
+<form id = "Login_Form" action = "LoginProcess" method = "POST">
+<table>
+<tr>
+	<td>아이디 : </td>
+	<td><input type = "text" name = "userId" id = "userId"><br></td>
+</tr>
+<tr>
+	<td> 암호 : </td>
+	<td> <input type = "password" name = "userPwd" id = "userPwd"><br></td>
+</tr>
+<tr>
+	<td> 암호확인 : </td>
+	<td> <input type = "password" name = "userPwdCheck" id="userPwdCheck"><br></td>
+</tr>
+<tr>
+	<td> 남녀 구분 : </td>
+	<td> <input type = "radio" name = "userGender" id = "men" value = "Man">남
+		 <input type = "radio" name = "userGender" id = "woman" value = "Women">여<br>
+	</td>
+</tr>
+<tr>
+	<td><input type = "submit" value = "로그인" onclick = "checkLogin()"></td>
+	<td><input type = "reset" value = "초기화"></td>
+</tr>
+<tr>
+</tr>
+</table>
+<span id = "msg"></span>
+  </form>
+</body>
+</html>
